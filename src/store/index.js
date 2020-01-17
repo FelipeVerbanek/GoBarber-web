@@ -15,6 +15,8 @@ const sagaMiddleware = createSagaMiddleware({sagaMonitor})
 
 const middlewares = [sagaMiddleware]
 
+
+//Salva dados no local storage
 const store = createStore(persistReducers(rootReducer), middlewares)
 const persistor = persistStore(store)
 

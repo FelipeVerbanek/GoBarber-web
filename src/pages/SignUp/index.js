@@ -2,9 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import {Form, Input} from '@rocketseat/unform'
 import * as Yup from 'yup'
-
+import { useDispatch } from 'react-redux'
 import logo from '~/assets/logo.svg'
 // import { Container } from './styles';
+
+import { signUpRequest } from '~/store/modules/auth/actions'
 
 const schema = Yup.object().shape({
   name: Yup.string().required('O nome é obrigatório!'),
@@ -18,11 +20,14 @@ const schema = Yup.object().shape({
 })
 
 export default function SignUp() {
+  const dispath = useDispatch()
 
-  function handleSubmit(data){
-    console.tron.log(data)
+  //Executa a action signUpRequest para cadastramento de usuário
+  function handleSubmit({name, email, password}){    
+    dispath(signUpRequest(name, email, password))
   }
 
+  //Formulario
   return (
     <>
       <img src={logo} alt="GoBarber"/>
