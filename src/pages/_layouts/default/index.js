@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 import { Wrapper } from './styles';
-
+import Header from '~/components/Header'
 export default function DefaultLayouts({children}) {
   return (
-  <Wrapper>{children}</Wrapper>
+    
+  <Wrapper>
+    <Header />
+  {children}
+  </Wrapper>
   );
 }
 
