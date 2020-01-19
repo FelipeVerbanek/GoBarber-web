@@ -1,18 +1,9 @@
 import styled from 'styled-components';
-import { darken } from 'polished'
+import {darken} from 'polished';
 
-export const Wrapper = styled.div`
-  height: 100%;
-  background: linear-gradient(-90deg, #7159c1, #ab59c1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Content = styled.div`
-  width: 100%;
-  max-width: 315px;
-  text-align: center;
+export const Container = styled.div`
+  max-width: 600px;
+  margin: 50px auto;
 
   form{
     display: flex;
@@ -37,6 +28,13 @@ export const Content = styled.div`
       align-self: flex-start;
       margin: 0 0 10px;
       font-weight: bold;
+    }
+
+    hr{
+        border: 0;
+        height: 1px;
+        background: rgba(250,250,250,0.2);
+        margin: 10px 0 20px;
     }
 
     button{
@@ -66,6 +64,21 @@ export const Content = styled.div`
       }
     }
   }
+  > button{
+      width: 100%;
+      margin: 10px 0 0 ;
+      height: 44px;
+      background: #F64C75;
+      font-weight: bold;
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.2s;
 
+      &:hover {
+        background: ${darken(0.08, '#F64C75')}
+      }
+    }
 
 `;
