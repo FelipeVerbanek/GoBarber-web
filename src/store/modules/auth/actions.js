@@ -26,8 +26,14 @@ export function signUpRequest(name, email, password){
 
 //Action disparada quando ocorre falha no processo
 export function signFailure(){
-    console.log('failed')
     return {
         type: '@auth/SIGN_IN_FAILURE'
+    }
+}
+
+//Action disparada ao deslogar
+export function signOut(){
+    return {
+        type: '@auth/SIGN_OUT'
     }
 }
